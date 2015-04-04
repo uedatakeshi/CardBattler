@@ -1,5 +1,11 @@
 source "https://rubygems.org"
-ruby '2.0.0'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'json'
+
+group :test do
+	gem 'rspec'
+	gem 'capybara'
+end
+

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'json'
 
 before do
 	logger.info "before"
@@ -25,9 +26,16 @@ end
 get '/' do
 	erb :index
 end
-=end
 
 get '/:name' do |n|
 	@name = n
 	erb :index
 end
+=end
+
+
+get '/card.json' do
+	content_type :json
+	{:card1 => {name: 'ピカチュウ', hp: "100"}, :card2 => {name: 'ポカブ', hp: "200"}, :card3 => {name: 'ツタージャ', hp: "300"}}.to_json
+end
+
